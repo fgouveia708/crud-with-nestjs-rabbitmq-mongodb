@@ -27,5 +27,4 @@ To provision these resources locally go to folder `/dev` and run `docker-compose
 
 ## Architecture
 
-![](https://raw.githubusercontent.com/fgouveia708/crud-with-nestjs-rabbitmq-mongodb/main/architecture-crud-with-nestjs-rabbitmq-mongodb.png)
-
+![](https://raw.githubusercontent.com/fgouveia708/crud-with-nestjs-rabbitmq-mongodb/blob/main/architecture-crud-with-nestjs-rabbitmq-mongodb.png)
