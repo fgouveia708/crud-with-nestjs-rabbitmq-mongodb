@@ -12,7 +12,7 @@ export class ContactController {
     async getAll(@Res() res) {
         const result = await this.service.getAll();
         if (result) {
-            return res.status(HttpStatus.OK).json('Fetched');
+            return res.status(HttpStatus.OK).json(result);
         } else {
             return res.status(HttpStatus.BAD_REQUEST).json('Error');
         }
@@ -24,7 +24,7 @@ export class ContactController {
         return res.status(HttpStatus.OK).json({ exist: result });
     }
 
-    @Get('get-id-by-email')
+    @Get('get-by-email')
     async getByEmail(@Query('email') email: string, @Res() res) {
         const result = await this.service.getByEmail(email);
         if (result) {
