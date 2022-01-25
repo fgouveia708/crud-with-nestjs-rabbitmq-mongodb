@@ -25,3 +25,7 @@ We use the following services for data storage:
 
 To provision these resources locally go to folder `/dev` and run `docker-compose up -d`
 
+## Architecture
+
+![](https://raw.githubusercontent.com/fgouveia708/crud-with-nestjs-rabbitmq-mongodb/main/architecture-crud-with-nestjs-rabbitmq-mongodb.png)
+
