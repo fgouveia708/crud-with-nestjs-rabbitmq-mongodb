@@ -7,7 +7,7 @@ This project is responsible for create, update and delete contact.
 
 ### Required
 
-- [Nest](https://github.com/nestjs/nest)
+- [NestJS](https://github.com/nestjs/nest)
 - [Docker](https://www.docker.com/)
 - [RabbitMQ](https://www.rabbitmq.com/)
 - [MongoDB](https://www.mongodb.com/)
