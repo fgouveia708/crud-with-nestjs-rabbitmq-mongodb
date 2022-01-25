@@ -70,4 +70,13 @@ export class ContactService implements IBaseService<ContactDto> {
             console.error('Error: ' + error.message);
         }
     }
+
+    async delete(id): Promise<boolean> {
+        try {
+            await this.repository.delete(id);
+            return true;
+        } catch (error) {
+            console.error('Error: ' + error.message);
+        }
+    }
 }

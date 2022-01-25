@@ -31,4 +31,16 @@ export class ContactController {
             return res.status(HttpStatus.BAD_REQUEST).json('Error');
         }
     }
+
+    @Patch(':id')
+    async delete(@Param('id') id: string, @Res() res) {
+
+        const result = await this.service.delete(id);
+
+        if (result) {
+            return res.status(HttpStatus.OK).json('Deleted');
+        } else {
+            return res.status(HttpStatus.BAD_REQUEST).json('Error');
+        }
+    }
 }

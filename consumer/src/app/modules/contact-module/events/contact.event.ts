@@ -26,4 +26,13 @@ export class ContactEvent {
 
     console.info(`Event Pattern: contact-update Event Data: ${data}, successfully consumed.`)
   }
+
+  @EventPattern("contact-delete")
+  async contactDelete(@Payload() data: any, @Ctx() context: RmqContext) {
+    console.info(`Event Pattern: contact-delete Event Data: ${data}`);
+
+    this.service.delete(JSON.parse(data).id);
+
+    console.info(`Event Pattern: contact-delete Event Data: ${data}, successfully consumed.`)
+  }
 }

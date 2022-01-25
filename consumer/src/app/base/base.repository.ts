@@ -8,17 +8,20 @@ export abstract class BaseRepository<TEntity extends Document> implements IBaseR
 
     constructor(private readonly basemodule: Model<TEntity>) { }
 
+    async delete(id: string) {
+        await this.basemodule.findByIdAndDelete({ _id: id });
+    }
+
     async getAll(): Promise<TEntity[]> {
-        return await this.basemodule.find({}).exec();;
+        return await this.basemodule.find({}).exec();
     }
 
     async getById(id: string): Promise<TEntity> {
-        return await this.basemodule.findById(id).exec();;
+        return await this.basemodule.findById(id).exec();
     }
 
     async update(entity: any): Promise<TEntity> {
-        const response = await this.basemodule.findOneAndUpdate({ _id: entity.id }, entity, { new: true });
-        return response;
+        return await this.basemodule.findOneAndUpdate({ _id: entity.id }, entity, { new: true });
     }
 
     async create(entity: any): Promise<TEntity> {
