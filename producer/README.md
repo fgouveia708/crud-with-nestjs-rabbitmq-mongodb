@@ -52,7 +52,42 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+
+## Routes
+
+
+### /v1/contact
+Create contact
+
+```bash
+curl --location --request POST '{base_url}/v1/contact' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name": "Your Name",
+  "email": "email@email.com"
+}'
+```
+
+### /v1/contact/{id}
+Update contact
+
+```bash
+curl --location --request PATCH '{base_url}/v1/contact/61f021f5f71b1e87605082c0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name": "Another Name"
+}'
+```
+
+### /v1/contact/{id}
+Delete contact
+
+```bash
+curl --location --request DELETE '{base_url}/v1/contact/61f021f5f71b1e87605082c0' \
+--data-raw ''
+```
+
+
 ## Swagger
 
 - [Swagger LOCAL](http://localhost:3000/api)
-
