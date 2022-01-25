@@ -1,4 +1,4 @@
-import { Body, Controller, HttpStatus, Param, Patch, Post, Res } from '@nestjs/common';
+import { Body, Controller, Delete, HttpStatus, Param, Patch, Post, Res } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CreateContactDto } from '../models/dtos/create-contact.dto';
 import { UpdateContactDto } from '../models/dtos/update-contact.dto';
@@ -32,7 +32,7 @@ export class ContactController {
         }
     }
 
-    @Patch(':id')
+    @Delete(':id')
     async delete(@Param('id') id: string, @Res() res) {
 
         const result = await this.service.delete(id);
